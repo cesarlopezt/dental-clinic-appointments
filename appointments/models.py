@@ -8,7 +8,10 @@ class Person(models.Model):
     phone_no = models.CharField(max_length=10)
     email = models.CharField(max_length=75)
     birth_date = models.DateField()
-    birth_date = models.DateTimeField()
+    registration_date = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self) -> str:
+        return f"{self.first_name} {self.last_name}"
 
     class Meta:
         verbose_name_plural = "People"
@@ -18,15 +21,24 @@ class Clinic(models.Model):
     name = models.CharField(max_length=30)
     rnc = models.CharField(max_length=9)
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Dentist(models.Model):
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
 
+    def __str__(self) -> str:
+        return f"{self.person.first_name} {self.person.last_name}"
+
 
 class Secretary(models.Model):
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f"{self.person.first_name} {self.person.last_name}"
 
     class Meta:
         verbose_name_plural = "Secretaries"
@@ -37,6 +49,9 @@ class Patient(models.Model):
         ('Active', 'Active'),
         ('Inactive', 'Inactive'),
     )
+
+    def __str__(self) -> str:
+        return f"{self.person.first_name} {self.person.last_name}"
 
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
     status = models.CharField(max_length=20, choices=STATUS, default='Active')
@@ -63,3 +78,7 @@ class Appointment(models.Model):
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     dentist = models.ForeignKey(Dentist, on_delete=models.CASCADE)
+    date = models.DateTimeField()
+
+    def __str__(self) -> str:
+        return f"{self.date}: {self.appointment_reason} -> {self.patient.person.first_name} {self.patient.person.last_name}"
