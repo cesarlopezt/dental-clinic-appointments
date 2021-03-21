@@ -1,5 +1,10 @@
 # dental-clinic-appointments
-Django website for a Project Management final project  
+Django website for a Project Management final project
+
+Standards:
+* When working on a new feature
+  1. Create a branch with the form `feature/{name-of-feature}`
+  2. Once the progress is ready open a Pull Request on github and ask Cesar to review it.
 
 Setup:
 1. `py venv env`
