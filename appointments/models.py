@@ -10,6 +10,9 @@ class Person(models.Model):
     birth_date = models.DateField()
     birth_date = models.DateTimeField()
 
+    class Meta:
+        verbose_name_plural = "People"
+
 
 class Clinic(models.Model):
     name = models.CharField(max_length=30)
@@ -17,13 +20,16 @@ class Clinic(models.Model):
 
 
 class Dentist(models.Model):
-    person = models.OneToOneField(Person)
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
 
 
 class Secretary(models.Model):
-    person = models.OneToOneField(Person)
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = "Secretaries"
 
 
 class Patient(models.Model):
@@ -32,7 +38,7 @@ class Patient(models.Model):
         ('Inactive', 'Inactive'),
     )
 
-    person = models.OneToOneField(Person)
+    person = models.OneToOneField(Person, on_delete=models.CASCADE)
     status = models.CharField(max_length=20, choices=STATUS, default='Active')
 
 
