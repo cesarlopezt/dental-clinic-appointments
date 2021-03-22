@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Person(models.Model):
@@ -34,6 +35,7 @@ class Dentist(models.Model):
 
 
 class Secretary(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     person = models.OneToOneField(Person, on_delete=models.CASCADE)
     clinic = models.ForeignKey(Clinic, on_delete=models.CASCADE)
 
@@ -81,4 +83,7 @@ class Appointment(models.Model):
     date = models.DateTimeField()
 
     def __str__(self) -> str:
-        return f"{self.date}: {self.appointment_reason} -> {self.patient.person.first_name} {self.patient.person.last_name}"
+        patient = self.patient.person
+        patient_name = f"{patient.first_name} {patient.last_name}"
+        date = f"{self.date.date()} | {self.date.strftime('%H:%M')}"
+        return f"{date}: {self.appointment_reason} -> {patient_name}"
