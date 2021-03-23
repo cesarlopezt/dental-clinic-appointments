@@ -1,20 +1,27 @@
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404
 
 from django.views.generic.detail import DetailView
+from django.views.generic import ListView
 
 from django.contrib.auth.models import User
-from .models import Secretary
+from .models import Patient
 
 
 @method_decorator(login_required, name='dispatch')
 class ProfileView(DetailView):
     model = User
-    template_name = 'accounts/profile.html'
+    template_name = 'secretaries/profile.html'
 
     def get_object(self):
         return self.request.user
+
+
+@method_decorator(login_required, name='dispatch')
+class PatientListView(ListView):
+    model = Patient
+    template_name = 'patients/list.html'
+    context_object_name = 'patients'
 
 
 # def get_context_data(self, **kwargs):
