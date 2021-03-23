@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block container %}
 <div class="content">
-    <p class="name-content">{{user.secretary.person.first_name}} {{user.secretary.person.last_name}}</p>
+    <p class="name-content">{{user.secretary.first_name}} {{user.secretary.last_name}}</p>
     <p class="position">Secretario</p>
     <hr>
     <p class="info clinica">Clinica: {{user.secretary.clinic}}</p>
-    <p class="info">Cedula: {{user.secretary.person.id_card}}</p>
-    <p class="info">Correo: {{user.secretary.person.email}}</p>
-    <p class="info">Telefono: {{user.secretary.person.phone_no}}</p>
-    <p class="info">Cumpleaños: {{user.secretary.person.birth_date}}</p>
+    <p class="info">Cedula: {{user.secretary.id_card}}</p>
+    <p class="info">Correo: {{user.secretary.email}}</p>
+    <p class="info">Telefono: {{user.secretary.phone_no}}</p>
+    <p class="info">Cumpleaños: {{user.secretary.birth_date}}</p>
 </div>
 {% endblock %}
 
