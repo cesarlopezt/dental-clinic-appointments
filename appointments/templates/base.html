@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>Informacion</title>
+</head>
+
+<body>
+    <div class="container">
+        {% block navbar %}
+        <nav class="sidebar">
+            <header>
+                <!-- <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-21.jpg" alt="profile_pic"> -->
+                <p id="name-sidebar">{{user.secretary.person.first_name}} {{user.secretary.person.last_name}}</p>
+            </header>
+            <ul>
+                <li class="selected">Mi información</li>
+                <li>Pacientes</li>
+                <li>Odontólogos</li>
+                <li>Citas</li>
+                <li id="signout">Cerrar Sesión</li>
+            </ul>
+        </nav>
+        {% endblock %}
+
+        {% block container %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
