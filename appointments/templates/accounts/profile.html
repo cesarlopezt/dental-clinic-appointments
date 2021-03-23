@@ -12,28 +12,30 @@
 </head>
 
 <body>
-    <div class="sidebar">
-        <div class="profile">
-            <!-- <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-21.jpg" alt="profile_pic"> -->
-            <p id="name-sidebar">{{user.secretary.person.first_name}} {{user.secretary.person.last_name}}</p>
+    <div class="container">
+        <nav class="sidebar">
+            <header>
+                <!-- <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-21.jpg" alt="profile_pic"> -->
+                <p id="name-sidebar">{{user.secretary.person.first_name}} {{user.secretary.person.last_name}}</p>
+            </header>
+            <ul>
+                <li class="selected">Mi información</li>
+                <li>Pacientes</li>
+                <li>Odontólogos</li>
+                <li>Citas</li>
+                <li id="signout">Cerrar Sesión</li>
+            </ul>
+        </nav>
+        <div class="content">
+            <p class="name-content">{{user.secretary.person.first_name}} {{user.secretary.person.last_name}}</p>
+            <p class="position">Secretario</p>
+            <hr>
+            <p class="info clinica">Clinica: {{user.secretary.clinic}}</p>
+            <p class="info">Cedula: {{user.secretary.person.id_card}}</p>
+            <p class="info">Correo: {{user.secretary.person.email}}</p>
+            <p class="info">Telefono: {{user.secretary.person.phone_no}}</p>
+            <p class="info">Cumpleaños: {{user.secretary.person.birth_date}}</p>
         </div>
-        <ul id="sidebar-items">
-            <li class="sidebar-item selected">Mi información</li>
-            <li class="sidebar-item">Pacientes</li>
-            <li class="sidebar-item">Odontólogos</li>
-            <li class="sidebar-item">Citas</li>
-            <li class="sidebar-item signout">Cerrar Sesión</li>
-        </ul>
-    </div>
-    <div class="content">
-        <p class="name-content">{{user.secretary.person.first_name}} {{user.secretary.person.last_name}}</p>
-        <p class="position">Secretario</p>
-        <hr>
-        <p class="info clinica">Clinica: {{user.secretary.clinic}}</p>
-        <p class="info">Cedula: {{user.secretary.person.id_card}}</p>
-        <p class="info">Correo: {{user.secretary.person.email}}</p>
-        <p class="info">Telefono: {{user.secretary.person.phone_no}}</p>
-        <p class="info">Cumpleaños: {{user.secretary.person.birth_date}}</p>
     </div>
 </body>
 
