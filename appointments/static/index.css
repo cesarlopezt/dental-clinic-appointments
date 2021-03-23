@@ -1,0 +1,64 @@
+:root {
+    --primary: #37d7ba;
+    --secondary: #64e0ca;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;    
+}
+
+.sidebar {
+    position: fixed; 
+    left: 0;
+    top: 0; 
+    width: 300px; 
+    height: 100%; 
+    z-index: 1; 
+    background-color: var(--secondary); 
+    color: white;
+    overflow-x: hidden; 
+    padding-top: 40px;
+}
+
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+}
+
+.sidebar li {
+    left: 0;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    background-color: var(--primary);
+    display: block;
+}
+
+.sidebar li:hover, .sidebar .selected {
+    background-color: white;
+    color: var(--primary);
+}
+
+.sidebar ul {
+    position: relative;
+}
+
+.sidebar #signout {
+    /* position: relative; */
+    bottom: 0px;
+    
+}
+
+.content {
+    grid-column: 2;
+}
