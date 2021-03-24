@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="content">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+        </tr>
+
+        <tr>
+            <td>{{patient.first_name}} {{patient.last_name}}</td>
+            <td>{{patient.email}}</td>
+            <td>{{patient.phone_no}}</td>
+            <td>{{patient.status}}</td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

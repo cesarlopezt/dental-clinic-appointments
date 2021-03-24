@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="content">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+        </tr>
+
+        {% for dentist in dentists %}
+        <tr>
+            <td>{{dentist.first_name}} {{dentist.last_name}}</td>
+            <td>{{dentist.email}}</td>
+            <td>{{dentist.phone_no}}</td>
+            <td>{{dentist.status}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
