@@ -19,6 +19,11 @@ class ProfileView(DetailView):
     def get_object(self):
         return self.request.user
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['info_navbar'] = "selected"
+        return context
+
 
 # Dentists
 @method_decorator(login_required, name='dispatch')
@@ -27,6 +32,11 @@ class DentistListView(ListView):
     template_name = 'dentists/list.html'
     context_object_name = 'dentists'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['dentists_navbar'] = "selected"
+        return context
+
 
 # Patients
 @method_decorator(login_required, name='dispatch')
@@ -34,6 +44,11 @@ class PatientListView(ListView):
     model = Patient
     template_name = 'patients/list.html'
     context_object_name = 'patients'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['patients_navbar'] = "selected"
+        return context
 
 
 @method_decorator(login_required, name='dispatch')

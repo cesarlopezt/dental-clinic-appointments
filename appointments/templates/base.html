@@ -19,14 +19,14 @@
         <nav class="sidebar">
             <header>
                 <!-- <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-21.jpg" alt="profile_pic"> -->
-                <p id="name-sidebar">{{user.secretary.first_name}} {{user.secretary.last_name}}</p>
+                <p id="name-sidebar">{{user.secretary}}</p>
             </header>
             <ul>
-                <li class="selected">Mi información</li>
-                <li>Pacientes</li>
-                <li>Odontólogos</li>
-                <li>Citas</li>
-                <li id="signout">Cerrar Sesión</li>
+                <li class="{{info_navbar}}"><a href="/">Mi información</a></li>
+                <li class="{{patients_navbar}}"> <a href="/patients/">Pacientes</a></li>
+                <li class="{{dentists_navbar}}"><a href="/dentists/">Odontólogos</a></li>
+                <li class="{{appointment_navbar}}"><a href="/appointments/">Citas</a></li>
+                <li id="signout"><a href="">Cerrar Sesión</a></li>
             </ul>
         </nav>
         {% endblock %}
