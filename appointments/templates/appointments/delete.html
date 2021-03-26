@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block container %}
+<div class="content">
+    <div class="card-header">
+        <h5 class="card-title">Cancelar Cita para <strong>{{appointment.patient}}</strong>
+        </h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            <div class="alert alert-warning" role="alert">
+                Estas seguro que quieres cancelar la cita para <strong>{{ appointment.patient }}</strong>
+                con el doctor <strong>{{ appointment.dentist }}</strong>?
+            </div>
+            <a class="btn" href="/appointments/">Cerrar</a>
+            <button type="submit" class="btn btn-danger">Cancelar cita</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

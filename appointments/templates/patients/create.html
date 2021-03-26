@@ -5,7 +5,8 @@
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit" class="btn btn-success">Create</button>
+        <a class="btn" href="/patients/">Cerrar</a>
+        <button type="submit" class="btn btn-success">Crear</button>
     </form>
 </div>
 

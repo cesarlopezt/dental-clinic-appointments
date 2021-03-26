@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="content">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Paciente</th>
+            <th>Dentista</th>
+            <th>Fecha</th>
+        </tr>
+
+        <tr>
+            <td>{{appointment.id}}</td>
+            <td>{{appointment.patient}}</td>
+            <td>{{appointment.dentist}}</td>
+            <td>{{appointment.date}}</td>
+            <td><a class="btn" href="update/">Editar</a></td>
+            <td><a class="btn" href="delete/">Cancelar</a></td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="content">
+    <a href="create/" class="btn">Agregar cita</a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Paciente</th>
+            <th>Dentista</th>
+            <th>Fecha</th>
+        </tr>
+
+        {% for appointment in appointments %}
+        <tr>
+            <td><a href="{{appointment.id}}">{{appointment.id}}</a></td>
+            <td>{{appointment.patient}}</td>
+            <td>{{appointment.dentist}}</td>
+            <td>{{appointment.date}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
