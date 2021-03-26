@@ -12,7 +12,7 @@
 
         {% for patient in patients %}
         <tr>
-            <td>{{patient.first_name}} {{patient.last_name}}</td>
+            <td><a href="{{patient.id}}">{{patient}}</a></td>
             <td>{{patient.email}}</td>
             <td>{{patient.phone_no}}</td>
             <td>{{patient.status}}</td>
