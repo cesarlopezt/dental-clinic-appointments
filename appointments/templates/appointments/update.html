@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="content">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <a class="btn" href="/appointments/">Cerrar</a>
+        <button type="submit" class="btn btn-success">Editar</button>
+    </form>
+</div>
+
+{% endblock %}

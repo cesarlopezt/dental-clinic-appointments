@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="content">
+    <a href="create/" class="btn">Agregar paciente</a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+        </tr>
+
+        {% for patient in patients %}
+        <tr>
+            <td><a href="{{patient.id}}">{{patient.id}}</a></td>
+            <td>{{patient}}</td>
+            <td>{{patient.email}}</td>
+            <td>{{patient.phone_no}}</td>
+            <td>{{patient.get_status_display}}</td>
+        </tr>
+
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block container %}
+
+<div class="content">
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Estado</th>
+        </tr>
+
+        <tr>
+            <td>{{patient}}</td>
+            <td>{{patient.email}}</td>
+            <td>{{patient.phone_no}}</td>
+            <td>{{patient.get_status_display}}</td>
+            <td><a class="btn" href="update/">Editar</a></td>
+            <td><a class="btn" href="delete/">Eliminar</a></td>
+        </tr>
+    </table>
+    <hr>
+    <h4>Citas</h4>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Dentista</th>
+            <th>Procedimiento</th>
+            <th>Metodo de pago</th>
+            <th>Fecha</th>
+        </tr>
+
+        {% for appointment in patient.appointment_set.all %}
+        <tr>
+            <td>{{appointment.id}}</td>
+            <td>{{appointment.dentist}}</td>
+            <td>{{appointment.get_appointment_reason_display}}</td>
+            <td>{{appointment.get_payment_method_display}}</td>
+            <td>{{appointment.date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}
