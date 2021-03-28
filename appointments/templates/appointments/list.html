@@ -8,6 +8,8 @@
             <th>ID</th>
             <th>Paciente</th>
             <th>Dentista</th>
+            <th>Procedimiento</th>
+            <th>Metodo de pago</th>
             <th>Fecha</th>
         </tr>
 
@@ -16,6 +18,8 @@
             <td><a href="{{appointment.id}}">{{appointment.id}}</a></td>
             <td>{{appointment.patient}}</td>
             <td>{{appointment.dentist}}</td>
+            <td>{{appointment.get_appointment_reason_display}}</td>
+            <td>{{appointment.get_payment_method_display}}</td>
             <td>{{appointment.date}}</td>
         </tr>
 
