@@ -2,6 +2,7 @@
 {% block container %}
 
 <div class="content">
+    <h2>Detalle de paciente</h2>
     <table>
         <tr>
             <th>Nombre</th>
@@ -16,11 +17,11 @@
             <td>{{patient.phone_no}}</td>
             <td>{{patient.get_status_display}}</td>
             <td><a class="btn" href="update/">Editar</a></td>
-            <td><a class="btn" href="delete/">Eliminar</a></td>
+            <!-- <td><a class="btn" href="delete/">Eliminar</a></td> -->
         </tr>
     </table>
     <hr>
-    <h4>Citas</h4>
+    <h3>Citas del paciente</h3>
     <table>
         <tr>
             <th>ID</th>

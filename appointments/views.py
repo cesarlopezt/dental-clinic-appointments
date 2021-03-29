@@ -90,16 +90,16 @@ class PatientUpdateView(UpdateView):
         return reverse('patient-detail', kwargs={'pk': self.object.pk})
 
 
-@method_decorator(login_required, name='dispatch')
-class PatientDeleteView(DeleteView):
-    model = Patient
-    template_name = 'patients/delete.html'
-    success_url = reverse_lazy('patient-list')
+# @method_decorator(login_required, name='dispatch')
+# class PatientDeleteView(DeleteView):
+#     model = Patient
+#     template_name = 'patients/delete.html'
+#     success_url = reverse_lazy('patient-list')
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['patients_navbar'] = "selected"
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['patients_navbar'] = "selected"
+#         return context
 
 
 # Appointment

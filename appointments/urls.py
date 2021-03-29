@@ -1,9 +1,9 @@
 from django.urls import path, include
 from .views import (
     ProfileView, PatientCreateView, PatientListView,
-    PatientUpdateView, PatientDetailView, PatientDeleteView,
-    DentistListView, AppointmentListView, AppointmentDetailView,
-    AppointmentCreateView, AppointmentDeleteView, AppointmentUpdateView
+    PatientUpdateView, PatientDetailView, DentistListView,
+    AppointmentListView, AppointmentDetailView, AppointmentCreateView,
+    AppointmentDeleteView, AppointmentUpdateView
 )
 
 urlpatterns = [
@@ -16,8 +16,8 @@ urlpatterns = [
          PatientDetailView.as_view(), name="patient-detail"),
     path('patients/<int:pk>/update/',
          PatientUpdateView.as_view(), name="patient-update"),
-    path('patients/<int:pk>/delete/',
-         PatientDeleteView.as_view(), name="patient-delete"),
+    # path('patients/<int:pk>/delete/',
+    #      PatientDeleteView.as_view(), name="patient-delete"),
 
     path('appointments/', AppointmentListView.as_view(), name="appointment-list"),
     path('appointments/create/', AppointmentCreateView.as_view(),
