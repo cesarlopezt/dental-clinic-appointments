@@ -7,13 +7,13 @@ from .base import BASE_DIR, MIDDLEWARE, DATABASES
 
 # DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['manejo-clinica-odontologica.herokuapp.com']
 
 prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)
 
 
-MIDDLEWARE = MIDDLEWARE + ['whitenoise.middleware.WhiteNoiseMiddleware']
+MIDDLEWARE = ['whitenoise.middleware.WhiteNoiseMiddleware'] + MIDDLEWARE
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
