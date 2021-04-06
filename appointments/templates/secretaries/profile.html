@@ -1,18 +1,44 @@
 {% extends "base.html" %}
+
 {% block container %}
-<div class="content">
-    <p class="name-content">{{user.secretary.first_name}} {{user.secretary.last_name}}</p>
-    <p class="position">Secretario</p>
-    <hr>
-    <p class="info clinica">Clinica: {{user.secretary.clinic}}</p>
-    <p class="info">Cedula: {{user.secretary.id_card}}</p>
-    <p class="info">Correo: {{user.secretary.email}}</p>
-    <p class="info">Telefono: {{user.secretary.phone_no}}</p>
-    <p class="info">Cumpleaños: {{user.secretary.birth_date}}</p>
+<div class="card mb-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Nombre Completo</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+          César Lopez
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Correo Electrónico</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+            {{user.secretary.email}}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Telefono</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+            {{user.secretary.phone_no}}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Cumpleaños</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+            {{user.secretary.birth_date}}
+        </div>
+      </div>
+      <hr>
+    </div>
 </div>
 {% endblock %}
-
-
-
-
-<!-- Hello {{user.username}} -->

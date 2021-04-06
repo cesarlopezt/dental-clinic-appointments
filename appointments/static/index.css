@@ -1,64 +1,31 @@
-:root {
-    --primary: #37d7ba;
-    --secondary: #64e0ca;
+body{
+  margin-top:20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;    
+}
+.main-body {
+  padding: 15px;
+}
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: .25rem;
 }
 
-* {
-    margin: 0;
-    padding: 0;
+.card-body {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1rem;
 }
 
-.container {
-    display: grid;    
-}
-
-.sidebar {
-    position: fixed; 
-    left: 0;
-    top: 0; 
-    width: 300px; 
-    height: 100%; 
-    z-index: 1; 
-    background-color: var(--secondary); 
-    color: white;
-    overflow-x: hidden; 
-    padding-top: 40px;
-}
-
-.sidebar header{
-    font-size: 22px;
-    color: white;
-    text-align: center;
-}
-
-.sidebar li {
-    left: 0;
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    background-color: var(--primary);
-    display: block;
-}
-
-.sidebar li:hover, .sidebar .selected {
-    background-color: white;
-    color: var(--primary);
-}
-
-.sidebar ul {
-    position: relative;
-}
-
-.sidebar #signout {
-    /* position: relative; */
-    bottom: 0px;
-    
-}
-
-.content {
-    grid-column: 2;
-}
