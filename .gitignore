@@ -131,3 +131,5 @@ dmypy.json
 # Dev env
 dental_clinic/settings/dev.py
 .vscode/
+
+bash.exe.stackdump
