@@ -6,9 +6,11 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 
 from django.urls import reverse_lazy, reverse
+from django import forms
 
 from django.contrib.auth.models import User
 from .models import Patient, Dentist, Appointment
+from .forms import DateInput
 
 
 @method_decorator(login_required, name='dispatch')
@@ -63,6 +65,11 @@ class PatientCreateView(CreateView):
         context['patients_navbar'] = "selected"
         return context
 
+    def get_form(self, form_class=None):
+        form = super(PatientCreateView, self).get_form(form_class)
+        form.fields['birth_date'] = forms.DateField(widget=DateInput)
+        return form
+
 
 @method_decorator(login_required, name='dispatch')
 class PatientDetailView(DetailView):
@@ -88,6 +95,11 @@ class PatientUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('patient-detail', kwargs={'pk': self.object.pk})
+
+    def get_form(self, form_class=None):
+        form = super(PatientUpdateView, self).get_form(form_class)
+        form.fields['birth_date'] = forms.DateField(widget=DateInput)
+        return form
 
 
 @method_decorator(login_required, name='dispatch')
