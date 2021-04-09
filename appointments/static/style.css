@@ -98,4 +98,14 @@ body{
   text-decoration: none;
 }
 
-
+.btn{
+  padding: 20px;
+  border-radius: 99px;
+  background-color: #1db954;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+.content{
+  padding: 2rem;
+}
