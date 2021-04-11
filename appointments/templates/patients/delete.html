@@ -2,18 +2,18 @@
 {% block container %}
 <div class="content">
     <div class="card-header">
-        <h5 class="card-title">Eliminar Paciente <strong>{{patient.first_name}}</strong>
+        <h5 class="card-title">Delete patient <strong>{{patient.first_name}}</strong>
         </h5>
     </div>
-    <div class="card-body">
-        <form method="post">
-            {% csrf_token %}
-            <div class="alert alert-warning" role="alert">
-                Estas seguro que quieres eliminar el paciente <strong>{{ patient }}</strong> ?
-            </div>
-            <a class="btn" href="/patients/">Cancelar</a>
-            <button type="submit" class="btn btn-danger">Eliminar</button>
-        </form>
-    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="alert alert-warning" role="alert">
+            Are you sure that you want to delete patient <strong>{{ patient }}</strong> ?
+        </div>
+        <a class="btn" href="/patients/">Close</a>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+
 </div>
 {% endblock %}
