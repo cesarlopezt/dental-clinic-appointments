@@ -4,19 +4,19 @@
 
 <div class="content">
     
-    <h3 class="mt-4">Contenido Principal</h3>
+    <h3 class="mt-4">Patients</h3>
     <br>
         <!-- <a href="create/" class="btn">Agregar paciente</a> -->
-        <button class="btn btn-success badge-pill" onclick="document.location= 'create/'">Nuevo Paciente</button>
+        <button class="btn btn-success badge-pill" onclick="document.location= 'create/'">New Patient</button>
         <div class="card mt-4"></div>
         <table class="table table-striped table-bordered table-hover">
     <thead align="center" class="table table-sm">
         <tr>
         <th>ID</th>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Telefono</th>
-        <th>Estado</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone number</th>
+        <th>Status</th>
     </tr>
     </thead>
     <tbody>
@@ -33,40 +33,5 @@
 </table>
 </div>
 </div>
-<!-- <div class="card mb-4">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-sm-5">
-                <h6 class="mb-0">ID</h6>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-
-<!-- <div class="content">
-    <a href="create/" class="btn">Agregar paciente</a>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Estado</th>
-        </tr>
-
-        {% for patient in patients %}
-        <tr>
-            <td><a href="{{patient.id}}">{{patient.id}}</a></td>
-            <td>{{patient}}</td>
-            <td>{{patient.email}}</td>
-            <td>{{patient.phone_no}}</td>
-            <td>{{patient.get_status_display}}</td>
-        </tr>
-
-        {% endfor %}
-    </table>
-</div> -->
 
 {% endblock %}

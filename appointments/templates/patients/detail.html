@@ -4,10 +4,10 @@
 <div class="content">
     <table>
         <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Estado</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone number</th>
+            <th>Status</th>
         </tr>
 
         <tr>
@@ -15,8 +15,8 @@
             <td>{{patient.email}}</td>
             <td>{{patient.phone_no}}</td>
             <td>{{patient.get_status_display}}</td>
-            <td><a class="btn" href="update/">Editar</a></td>
-            <td><a class="btn" href="delete/">Eliminar</a></td>
+            <td><a class="btn" href="update/">Edit</a></td>
+            <td><a class="btn" href="delete/">Delete</a></td>
         </tr>
     </table>
     <hr>
@@ -24,10 +24,10 @@
     <table>
         <tr>
             <th>ID</th>
-            <th>Dentista</th>
-            <th>Procedimiento</th>
-            <th>Metodo de pago</th>
-            <th>Fecha</th>
+            <th>Dentist</th>
+            <th>Reason</th>
+            <th>Payment Method</th>
+            <th>Date</th>
         </tr>
 
         {% for appointment in patient.appointment_set.all %}

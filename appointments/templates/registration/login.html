@@ -21,7 +21,7 @@
           <div class="d-flex flex-column align-items-center text-left">
             <img src="{% static 'img/logo.jpeg'%}" alt="User" class="rounded-circle" width="150">
             <h4 class="title text-center mt-4">
-            Iniciar Sesión
+            Log In
           </h4>
           <form method="post" class="form-box px-3">
             {% csrf_token %}
@@ -55,9 +55,3 @@
 
 
 
-<!-- <h2>Log In</h2>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form> -->

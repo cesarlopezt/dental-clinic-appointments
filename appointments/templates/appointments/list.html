@@ -3,20 +3,19 @@
 
 <div class="content">
     
-    <h3 class="mt-4">Contenido Principal</h3>
+    <h3 class="mt-4">Appointments</h3>
     <br>
-        <!-- <a href="create/" class="btn">Agregar paciente</a> -->
-        <button class="btn btn-success badge-pill" onclick="document.location= 'create/'">Nueva Cita</button>
+        <button class="btn btn-success badge-pill" onclick="document.location= 'create/'">New Appointment</button>
         <div class="card mt-4"></div>
         <table class="table table-striped table-bordered table-hover">
     <thead align="center" class="table table-sm">
         <tr>
         <th>ID</th>
-        <th>Paciente</th>
-        <th>Dentista</th>
-        <th>Procedimiento</th>
-        <th>Metodo de pago</th>
-        <th>Fecha</th>
+        <th>Patient</th>
+        <th>Dentist</th>
+        <th>Reason</th>
+        <th>Payment Method</th>
+        <th>Date</th>
     </tr>
     </thead>
     <tbody>
@@ -34,32 +33,5 @@
 </table>
 </div>
 </div>
-
-
-<!-- <div class="content">
-    <a href="create/" class="btn">Agregar cita</a>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Paciente</th>
-            <th>Dentista</th>
-            <th>Procedimiento</th>
-            <th>Metodo de pago</th>
-            <th>Fecha</th>
-        </tr>
-
-        {% for appointment in appointments %}
-        <tr>
-            <td><a href="{{appointment.id}}">{{appointment.id}}</a></td>
-            <td>{{appointment.patient}}</td>
-            <td>{{appointment.dentist}}</td>
-            <td>{{appointment.get_appointment_reason_display}}</td>
-            <td>{{appointment.get_payment_method_display}}</td>
-            <td>{{appointment.date}}</td>
-        </tr>
-
-        {% endfor %}
-    </table>
-</div> -->
 
 {% endblock %}

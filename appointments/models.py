@@ -44,8 +44,8 @@ class Secretary(models.Model):
 
 class Patient(models.Model):
     STATUS = (
-        ('Active', 'Activo'),
-        ('Inactive', 'Inactivo'),
+        ('Active', 'Active'),
+        ('Inactive', 'Inactive'),
     )
 
     def __str__(self) -> str:
@@ -63,11 +63,11 @@ class Patient(models.Model):
 
 class Appointment(models.Model):
     REASON = (
-        ('CG', 'Consulta General'),
-        ('LD', 'Limpieza Dental'),
-        ('OR', 'Ortodoncia'),
-        ('EX', 'Extracción'),
-        ('RX', 'Radiografías'),
+        ('GC', 'General Consultation'),
+        ('DC', 'Dental cleaning'),
+        ('CR', 'Crowns'),
+        ('BR', 'Braces'),
+        ('TW', 'Teeth whitening'),
     )
     PAYMENT_METHOD = (
         ('CS', 'Cash'),
