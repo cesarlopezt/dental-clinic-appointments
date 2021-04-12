@@ -1,7 +1,97 @@
 {% extends "base.html" %}
 {% block container %}
 
-<div class="content">
+<div class="card mt-4 w-50">
+<div class="card-body">
+    <div class="row">
+        <div class="col-sm-5">
+            <h6 class="mb-0">Name</h6>
+        </div>
+        <div class="col-sm-7 text-secondary">
+            {{patient}}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-5">
+            <h6 class="mb-0">Email</h6>
+        </div>
+        <div class="col-sm-7 text-secondary">
+            {{patient.email}}
+        </div>
+    </div>
+    <hr>
+      <div class="row">
+        <div class="col-sm-5">
+          <h6 class="mb-0">Phone Number</h6>
+        </div>
+        <div class="col-sm-5 text-secondary">
+            {{patient.phone_no}}
+        </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-5">
+    <h6 class="mb-0">Status</h6>
+  </div>
+  <div class="col-sm-7 text-secondary">
+    {{patient.get_status_display}}
+  </div>
+</div>
+<hr>
+<!--
+<div class="row">
+    <div class="col-sm-5">
+      <h6 class="mb-0">ID</h6>
+    </div>
+    <div class="col-sm-7 text-secondary">
+        {{appointment.id}}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-5">
+      <h6 class="mb-0">Dentist</h6>
+    </div>
+    <div class="col-sm-7 text-secondary">
+        {{appointment.dentist}}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-5">
+      <h6 class="mb-0">Reason</h6>
+    </div>
+    <div class="col-sm-7 text-secondary">
+        {{appointment.get_appointment_reason_display}}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-5">
+      <h6 class="mb-0">Payment Method</h6>
+    </div>
+    <div class="col-sm-7 text-secondary">
+        {{appointment.get_payment_method_display}}
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-sm-5">
+      <h6 class="mb-0">Date</h6>
+    </div>
+    <div class="col-sm-7 text-secondary">
+        {{appointment.date}}
+    </div>
+</div>
+<hr>
+-->
+</div>
+
+
+
+
+<!-- <div class="content">
     <table>
         <tr>
             <th>Name</th>
@@ -20,6 +110,7 @@
         </tr>
     </table>
     <hr>
+
     <h4>Citas</h4>
     <table>
         <tr>
@@ -40,6 +131,6 @@
         </tr>
         {% endfor %}
     </table>
-</div>
+</div> -->
 
 {% endblock %}

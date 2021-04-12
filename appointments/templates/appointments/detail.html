@@ -1,7 +1,48 @@
 {% extends "base.html" %}
 {% block container %}
 
-<div class="content">
+<div class="card mt-4 w-50">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-5">
+                <h6 class="mb-0">ID</h6>
+            </div>
+            <div class="col-sm-7 text-secondary">
+                {{appointment.id}}
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-sm-5">
+                <h6 class="mb-0">Patient</h6>
+            </div>
+            <div class="col-sm-7 text-secondary">
+                {{appointment.patient}}
+            </div>
+        </div>
+        <hr>
+          <div class="row">
+            <div class="col-sm-5">
+              <h6 class="mb-0">Dentist</h6>
+            </div>
+            <div class="col-sm-5 text-secondary">
+                {{appointment.dentist}}
+            </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-5">
+        <h6 class="mb-0">Date</h6>
+      </div>
+      <div class="col-sm-7 text-secondary">
+        {{appointment.date}}
+        </div>
+    </div>
+    <hr>
+    </div>
+
+
+<!-- <div class="content">
     <table>
         <tr>
             <th>Id</th>
@@ -19,6 +60,6 @@
             <td><a class="btn" href="delete/">Cancel</a></td>
         </tr>
     </table>
-</div>
+</div> -->
 
 {% endblock %}
