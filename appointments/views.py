@@ -24,6 +24,9 @@ class ProfileView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['info_navbar'] = "selected"
+
+        ph = self.object.secretary.phone_no
+        context['phone'] = f"({ph[0:3]}) {ph[3:6]}-{ph[6:10]}"
         return context
 
 
