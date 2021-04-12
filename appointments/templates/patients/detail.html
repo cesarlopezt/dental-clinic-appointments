@@ -42,98 +42,26 @@
   </div>
 </div>
 <hr>
-<!--
-<div class="row">
-    <div class="col-sm-5">
-      <h6 class="mb-0">ID</h6>
-    </div>
-    <div class="col-sm-7 text-secondary">
-        {{appointment.id}}
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-sm-5">
-      <h6 class="mb-0">Dentist</h6>
-    </div>
-    <div class="col-sm-7 text-secondary">
-        {{appointment.dentist}}
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-sm-5">
-      <h6 class="mb-0">Reason</h6>
-    </div>
-    <div class="col-sm-7 text-secondary">
-        {{appointment.get_appointment_reason_display}}
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-sm-5">
-      <h6 class="mb-0">Payment Method</h6>
-    </div>
-    <div class="col-sm-7 text-secondary">
-        {{appointment.get_payment_method_display}}
-    </div>
-</div>
-<hr>
-<div class="row">
-    <div class="col-sm-5">
-      <h6 class="mb-0">Date</h6>
-    </div>
-    <div class="col-sm-7 text-secondary">
-        {{appointment.date}}
-    </div>
-</div>
-<hr>
--->
-</div>
-
-
-
-
-<!-- <div class="content">
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone number</th>
-            <th>Status</th>
-        </tr>
-
-        <tr>
-            <td>{{patient}}</td>
-            <td>{{patient.email}}</td>
-            <td>{{patient.phone_no}}</td>
-            <td>{{patient.get_status_display}}</td>
-            <td><a class="btn" href="update/">Edit</a></td>
-            <td><a class="btn" href="delete/">Delete</a></td>
-        </tr>
-    </table>
-    <hr>
-
-    <h4>Citas</h4>
-    <table>
+<table class="table table-striped table-bordered table-hover">
+    <thead align="center" class="table table-sm">
         <tr>
             <th>ID</th>
             <th>Dentist</th>
             <th>Reason</th>
-            <th>Payment Method</th>
             <th>Date</th>
         </tr>
-
+    </thead>
+    <tbody>
         {% for appointment in patient.appointment_set.all %}
         <tr>
             <td>{{appointment.id}}</td>
             <td>{{appointment.dentist}}</td>
             <td>{{appointment.get_appointment_reason_display}}</td>
-            <td>{{appointment.get_payment_method_display}}</td>
             <td>{{appointment.date}}</td>
         </tr>
-        {% endfor %}
-    </table>
-</div> -->
+    </tbody>
+    {% endfor %}
+</table>
 
+</div>
 {% endblock %}
